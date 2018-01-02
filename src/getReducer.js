@@ -9,6 +9,7 @@ const getInitialState = (baseReducer, initialPageSize, initialSortColumn) => ({
   resultCount: 0,
   maxPage: 0,
   currentPage: 0,
+  start: 0,
   sortAscending: false,
   filter: '',
   sortColumn: initialSortColumn,
@@ -72,6 +73,7 @@ const getRowSelectTableReducer = (reducer, camelCaseName, initialPageSize, initi
           currentPage: 0,
           sortAscending: action.sortAscending,
           sortColumn: action.sortColumn,
+          start: 0,
         }
       case SET_FILTER:
         return {
